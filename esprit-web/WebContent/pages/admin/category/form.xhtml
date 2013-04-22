@@ -1,0 +1,23 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+                	
+					
+			
+				<h:form rendered="#{categoryBean.formDisplayed}">
+					<h:panelGrid columns="2">
+						<h:outputText value="id" />
+						<h:inputText value="#{categoryBean.category.id}" />
+						<h:outputText value="name" />
+						<h:inputText value="#{categoryBean.category.name}" />
+						<h:commandButton action="#{categoryBean.doCancel}" value="cancel" />
+						<h:panelGrid columns="2">
+						<h:commandButton action="#{categoryBean.doDelete}" value="delete" />
+							<h:commandButton action="#{categoryBean.doSaveOrUpdate}" value="save" />
+						</h:panelGrid>
+						
+					</h:panelGrid>
+				</h:form>
+			
+</ui:composition>

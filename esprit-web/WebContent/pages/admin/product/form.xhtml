@@ -1,0 +1,30 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets">
+                	
+					
+			
+				<h:form rendered="#{productBean.formDisplayed}">
+					<h:panelGrid columns="2">
+						<h:outputText value="id" />
+						<h:inputText value="#{productBean.product.id}" />
+						<h:outputText value="name" />
+						<h:inputText value="#{productBean.product.name}" />
+						<h:outputText value="price" />
+						<h:inputText value="#{productBean.product.unitCost}" />
+						<h:outputText value="category" />
+						<h:selectOneMenu value="#{productBean.selectedCategoryId}">
+							<f:selectItem itemValue="-1" itemLabel="choose one..."/>
+							<f:selectItems value="#{productBean.selectItemsForCategories}" />
+						</h:selectOneMenu>
+						<h:commandButton action="#{productBean.doCancel}" value="cancel" />
+						<h:panelGrid columns="2">
+						<h:commandButton action="#{productBean.doDelete}" value="delete" />
+							<h:commandButton action="#{productBean.doSaveOrUpdate}" value="save" />
+						</h:panelGrid>
+						
+					</h:panelGrid>
+				</h:form>
+			
+</ui:composition>
